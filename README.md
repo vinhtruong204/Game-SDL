@@ -4,4 +4,4 @@ I really wanna make this game like Little Gunfight or Gun Mayhem. But now i have
 
 # Image of the game
 
-![game_image](Images\game_image.png)
+![game_image](Images/game_image.png)
