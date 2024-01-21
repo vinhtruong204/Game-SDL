@@ -57,7 +57,7 @@ bool init(Window &window)
     return success;
 }
 
-bool loadMedia(SDL_Renderer *renderer, Texture &backgroundTexture, Character &player, Texture &tile, Sound &music)
+bool loadMedia(SDL_Renderer *renderer, Texture &backgroundTexture, Character &player, Texture &tile)
 {
     bool success = true;
 
@@ -87,21 +87,13 @@ bool loadMedia(SDL_Renderer *renderer, Texture &backgroundTexture, Character &pl
                 std::cout << "Failed to load tile image!\n";
                 success = false;
             }
-            else
-            {
-                if (!music.loadMusic("Audio/zombie_tsunami.mp3"))
-                {
-                    std::cout << "Failed to load music from file!\n";
-                    success = false;
-                }
-            }
         }
     }
 
     return success;
 }
 
-void close(Window &window, Texture &backgroundTexture, Character &player, Texture &tile, Sound &music)
+void close(Window &window, Texture &backgroundTexture, Character &player, Texture &tile)
 {
     // Destroy window and renderer
     window.free();
@@ -110,9 +102,6 @@ void close(Window &window, Texture &backgroundTexture, Character &player, Textur
     tile.free();
     player.free();
     backgroundTexture.free();
-
-    // Free Music
-    music.freeMusic();
 
     // Quit subsystems
     IMG_Quit();

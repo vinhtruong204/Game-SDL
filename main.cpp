@@ -19,7 +19,7 @@ int main(int argc, char *args[])
     Character player;
 
     // Music background
-    Sound music;
+    // Sound music;
 
     // Initialize SDL, SDL_image, SDL_Mixer, SDL_ttf
     if (!init(window))
@@ -29,7 +29,7 @@ int main(int argc, char *args[])
     else
     {
         // Load media from file
-        if (!loadMedia(window.getRenderer(), backgroundTexture, player, tile, music))
+        if (!loadMedia(window.getRenderer(), backgroundTexture, player, tile))
         {
             std::cout << "Failed to load media!\n";
         }
@@ -99,6 +99,6 @@ int main(int argc, char *args[])
     }
 
     // Free resources and quit subsystem
-    close(window, backgroundTexture, player, tile, music);
+    close(window, backgroundTexture, player, tile);
     return 0;
 }
